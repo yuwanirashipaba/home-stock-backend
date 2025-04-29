@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HomeStockManagementApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(HomeStockManagementApplication.class, args);
+		System.out.println("Home Inventory System is running...");
 	}
 
 }
