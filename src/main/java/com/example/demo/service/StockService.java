@@ -53,7 +53,7 @@ public class StockService {
             stock.setName(stockRequest.getName());
             stock.setCategoryId(stockRequest.getCategoryId());
             stock.setCategoryName(stockCategory.getName());
-            stock.setUnitPrice(stockRequest.getUnitPrice());
+            stock.setPrice(stockRequest.getPrice());
             stock.setQuantity(stockRequest.getQuantity());
             stock.setPurchasedDate(stockRequest.getPurchasedDate());
             stock.setExpiredDate(stockRequest.getExpiredDate());
@@ -114,7 +114,7 @@ public class StockService {
             stock.setName(updatedStock.getName());
             stock.setCategoryId(updatedStock.getCategoryId());
             stock.setCategoryName(updatedStock.getName());
-            stock.setUnitPrice(updatedStock.getUnitPrice());
+            stock.setPrice(updatedStock.getPrice());
             stock.setQuantity(updatedStock.getQuantity());
             stock.setPurchasedDate(updatedStock.getPurchasedDate());
             stock.setExpiredDate(updatedStock.getExpiredDate());

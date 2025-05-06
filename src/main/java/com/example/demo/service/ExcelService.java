@@ -41,7 +41,7 @@ public class ExcelService {
             for (Stock stock : stocks) {
                 Row row = sheet.createRow(rowNum++);
                 row.createCell(0).setCellValue(stock.getName());
-                row.createCell(1).setCellValue(stock.getUnitPrice());
+                row.createCell(1).setCellValue(stock.getPrice());
                 row.createCell(2).setCellValue(stock.getQuantity());
                 row.createCell(3).setCellValue(stock.getCategoryName());
                 row.createCell(4).setCellValue(stock.getPurchasedDate());
