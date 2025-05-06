@@ -30,7 +30,7 @@ public class StockService {
     private final ExcelService excelService;
 
     // TODO: change image directory
-    private static final String IMAGE_DIRECTORY = "C:\\Users\\ASUS\\Downloads\\Archive\\ITPM-Group-Project\\public\\products\\";
+    private static final String IMAGE_DIRECTORY = "C:\\Users\\ASUS\\Documents\\ITPM-Group-Project\\ITPM-Group-Project\\frontend\\public\\products\\";
 
     public StockService(StockRepository stockRepository, StockCategoryRepository stockCategoryRepository, ExcelService excelService) {
         this.stockRepository = stockRepository;
