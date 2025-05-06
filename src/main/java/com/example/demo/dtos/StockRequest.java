@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 public class StockRequest {
     private String name;
-    private double unitPrice;
+    private double price;
     private int quantity;
     private String categoryId;
     private String categoryName;

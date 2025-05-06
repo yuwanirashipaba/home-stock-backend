@@ -11,7 +11,7 @@ public class Stock {
     @MongoId(value = FieldType.STRING)
     private String id;
     private String name;
-    private double unitPrice;
+    private double price;
     private int quantity;
     private String filepath;
     private String categoryId;
