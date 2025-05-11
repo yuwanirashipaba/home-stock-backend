@@ -70,4 +70,6 @@ public interface StockRepository extends MongoRepository<Stock, Integer> {
         String getCategoryName();
         int getTotalQuantity();
     }
+
+    List<Stock> findByCategoryId(String category);
 }

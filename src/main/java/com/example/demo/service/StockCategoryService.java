@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.models.Stock;
 import com.example.demo.models.StockCategory;
 import com.example.demo.repository.StockCategoryRepository;
+import com.example.demo.repository.StockRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -11,9 +13,11 @@ import java.util.List;
 @Service
 public class StockCategoryService {
     private StockCategoryRepository stockCategoryRepository;
+    private StockRepository stockRepository;
 
-    public StockCategoryService(StockCategoryRepository stockCategoryRepository) {
+    public StockCategoryService(StockCategoryRepository stockCategoryRepository, StockRepository stockRepository) {
         this.stockCategoryRepository = stockCategoryRepository;
+        this.stockRepository = stockRepository;
     }
 
     public ResponseEntity<StockCategory> findStockCategoryById(String id) {
@@ -36,6 +40,11 @@ public class StockCategoryService {
         }
         stockCategory.setName(updatedStockCategory.getName());
         StockCategory savedStockCategory = stockCategoryRepository.save(stockCategory);
+        List<Stock> stocksByCategory = stockRepository.findByCategoryId(id);
+        for (Stock stock: stocksByCategory) {
+            stock.setCategoryName(updatedStockCategory.getName());
+            stockRepository.save(stock);
+        }
         return new ResponseEntity<>(savedStockCategory, HttpStatus.OK);
     }
 
